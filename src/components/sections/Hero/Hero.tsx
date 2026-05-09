@@ -18,8 +18,7 @@ const Hero: FC<HeroProps> = ({
   backgroundImageAlt = "",
 }) => (
   <section
-    className="relative overflow-hidden"
-    style={{ height: "384px" }}
+    className="relative overflow-hidden w-full aspect-[1875/600]"
     aria-label="Hero"
   >
     {backgroundImage ? (

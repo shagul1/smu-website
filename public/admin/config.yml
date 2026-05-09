@@ -1,0 +1,49 @@
+# Decap CMS Configuration
+# Replace YOUR-GITHUB-USERNAME with your actual GitHub username before deploying.
+backend:
+  name: github
+  repo: shagul1/smu-website
+  branch: main
+
+# Uncomment below to enable editorial workflow (draft → review → publish)
+# publish_mode: editorial_workflow
+
+media_folder: "public/images/uploads"
+public_folder: "/images/uploads"
+
+collections:
+  - name: "homepage"
+    label: "Homepage"
+    files:
+      - label: "Homepage Content"
+        name: "homepage"
+        file: "src/content/homepage.json"
+        fields:
+          - label: "Hero Headline"
+            name: "heroHeadline"
+            widget: "string"
+          - label: "Hero Subtext"
+            name: "heroSubtext"
+            widget: "text"
+          - label: "Hero CTA Label"
+            name: "heroCtaLabel"
+            widget: "string"
+          - label: "Hero CTA URL"
+            name: "heroCtaHref"
+            widget: "string"
+          - label: "News Articles"
+            name: "news"
+            widget: "list"
+            fields:
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime" }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Image", name: "imageUrl", widget: "image" }
+              - { label: "Article URL", name: "href", widget: "string" }
+          - label: "Stats"
+            name: "stats"
+            widget: "list"
+            fields:
+              - { label: "Value", name: "value", widget: "string" }
+              - { label: "Label", name: "label", widget: "string" }
+              - { label: "Source", name: "source", widget: "string" }

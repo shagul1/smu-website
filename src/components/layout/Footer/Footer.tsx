@@ -50,12 +50,12 @@ const socialLinks = [
 ];
 
 const Footer: FC = () => (
-  <footer className="bg-smu-dark-blue text-white" role="contentinfo">
+  <footer className="bg-[#eeeeee] text-[#666666]" role="contentinfo">
     <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
       <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
         {footerColumns.map((col) => (
           <div key={col.heading}>
-            <h3 className="text-sm font-semibold uppercase tracking-wider text-yellow-200 mb-4">
+            <h3 className="text-sm font-semibold uppercase tracking-wider text-[#454545] mb-4">
               {col.heading}
             </h3>
             <ul className="space-y-2">
@@ -63,7 +63,7 @@ const Footer: FC = () => (
                 <li key={link.href}>
                   <Link
                     href={link.href}
-                    className="text-sm text-gray-300 hover:text-white transition-colors"
+                    className="text-sm text-black hover:text-smu-blue transition-colors"
                   >
                     {link.label}
                   </Link>
@@ -74,10 +74,10 @@ const Footer: FC = () => (
         ))}
       </div>
 
-      <div className="mt-12 pt-8 border-t border-white/20 flex flex-col sm:flex-row items-center justify-between gap-4">
+      <div className="mt-12 pt-8 border-t border-[#cccccc] flex flex-col sm:flex-row items-center justify-between gap-4">
         <div className="flex items-center gap-3">
-          <span className="text-2xl font-bold tracking-widest">SMU</span>
-          <span className="text-gray-400 text-sm">Southern Methodist University</span>
+          <span className="text-2xl font-bold tracking-widest text-[#454545]">SMU</span>
+          <span className="text-[#666666] text-sm">Southern Methodist University</span>
         </div>
 
         <div className="flex items-center gap-4">
@@ -88,7 +88,7 @@ const Footer: FC = () => (
               aria-label={s.label}
               target="_blank"
               rel="noopener noreferrer"
-              className="w-8 h-8 flex items-center justify-center rounded-full border border-white/30 text-xs font-bold text-white hover:bg-white/20 transition-colors"
+              className="w-8 h-8 flex items-center justify-center rounded-full border border-[#999999] text-xs font-bold text-[#666666] hover:bg-[#cccccc] transition-colors"
             >
               {s.icon}
             </a>
@@ -96,7 +96,7 @@ const Footer: FC = () => (
         </div>
       </div>
 
-      <p className="mt-6 text-center text-xs text-gray-400">
+      <p className="mt-6 text-center text-xs text-[#666666]">
         &copy; {new Date().getFullYear()} Southern Methodist University. Dallas, Texas 75275.
         All rights reserved.
       </p>

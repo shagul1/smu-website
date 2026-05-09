@@ -7,10 +7,11 @@ export const hero = {
   title: "MUSTANGS MAKE COLLEGE INTERNSHIPS COUNT",
   subtitle:
     "A top private research university in the heart of Dallas, SMU prepares students to be creative thinkers, ethical leaders, and agents of change.",
-  ctaLabel: "Explore Opportunities",
+  ctaLabel: "EXPAND YOUR HORIZONS",
   ctaHref: "/academics",
-  backgroundImage: "",
-  backgroundImageAlt: "SMU campus",
+  backgroundImage:
+    "https://www.smu.edu/-/media/site/stories/fy26/internships/web-banner-1875x600.jpg",
+  backgroundImageAlt: "Mustangs make college internships count",
 };
 
 export const quickLinks: QuickLink[] = [

@@ -6,6 +6,9 @@ const nextConfig: NextConfig = {
   trailingSlash: true,
   images: {
     unoptimized: true,
+    remotePatterns: [
+      { protocol: "https", hostname: "www.smu.edu" },
+    ],
   },
   // Set NEXT_PUBLIC_BASE_PATH=/repo-name when deploying to a GitHub Pages project repo
   basePath: process.env.NEXT_PUBLIC_BASE_PATH ?? "",

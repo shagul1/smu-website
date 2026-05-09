@@ -1,4 +1,5 @@
 import { FC } from "react";
+import Image from "next/image";
 import Link from "next/link";
 
 export interface NewsArticle {
@@ -38,13 +39,13 @@ const NewsGrid: FC<NewsGridProps> = ({ articles }) => (
           <li key={article.href}>
             <Link href={article.href} className="group block h-full">
               <article className="h-full flex flex-col rounded-lg overflow-hidden border border-smu-border hover:border-smu-blue hover:shadow-md transition-all">
-                {/* Image placeholder */}
-                <div
-                  className="h-48 bg-smu-light-gray flex items-center justify-center"
-                  role="img"
-                  aria-label={article.title}
-                >
-                  <span className="text-4xl text-smu-border">📰</span>
+                <div className="relative h-1/2 min-h-48 bg-smu-light-gray">
+                  <Image
+                    src={article.imageUrl}
+                    alt={article.title}
+                    fill
+                    className="object-cover"
+                  />
                 </div>
 
                 <div className="p-5 flex flex-col flex-1">

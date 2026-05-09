@@ -4,11 +4,13 @@ import type { Stat } from "@/components/sections/Stats";
 import type { NewsArticle } from "@/components/sections/NewsGrid";
 
 export const hero = {
-  headline: "MUSTANGS MAKE COLLEGE INTERNSHIPS COUNT",
-  subtext:
+  title: "MUSTANGS MAKE COLLEGE INTERNSHIPS COUNT",
+  subtitle:
     "A top private research university in the heart of Dallas, SMU prepares students to be creative thinkers, ethical leaders, and agents of change.",
   ctaLabel: "Explore Opportunities",
   ctaHref: "/academics",
+  backgroundImage: "",
+  backgroundImageAlt: "SMU campus",
 };
 
 export const quickLinks: QuickLink[] = [

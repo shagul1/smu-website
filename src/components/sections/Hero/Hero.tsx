@@ -1,47 +1,58 @@
 import { FC } from "react";
-import Button from "@/components/ui/Button";
 
 export interface HeroProps {
-  headline: string;
-  subtext: string;
+  title: string;
+  subtitle: string;
   ctaLabel: string;
   ctaHref: string;
+  backgroundImage?: string;
+  backgroundImageAlt?: string;
 }
 
-const Hero: FC<HeroProps> = ({ headline, subtext, ctaLabel, ctaHref }) => (
+const Hero: FC<HeroProps> = ({
+  title,
+  subtitle,
+  ctaLabel,
+  ctaHref,
+  backgroundImage,
+  backgroundImageAlt = "",
+}) => (
   <section
-    className="relative bg-smu-blue text-white overflow-hidden"
+    className="relative overflow-hidden"
+    style={{ height: "384px" }}
     aria-label="Hero"
   >
-    {/* Decorative gradient overlay */}
-    <div
-      className="absolute inset-0 opacity-20"
-      style={{
-        background:
-          "radial-gradient(ellipse at 70% 50%, #1a4fa8 0%, transparent 70%)",
-      }}
-      aria-hidden="true"
-    />
+    {backgroundImage ? (
+      <img
+        src={backgroundImage}
+        alt={backgroundImageAlt}
+        className="absolute inset-0 w-full h-full object-cover"
+      />
+    ) : (
+      <div
+        className="absolute inset-0 bg-smu-blue"
+        style={{
+          background: "linear-gradient(135deg, #001f5b 0%, #003087 60%, #1a4fa8 100%)",
+        }}
+        aria-hidden="true"
+        data-testid="hero-placeholder"
+      />
+    )}
 
-    <div className="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-36">
-      <div className="max-w-2xl">
-        <p className="text-yellow-200 text-sm font-semibold uppercase tracking-widest mb-4">
-          Southern Methodist University
-        </p>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold leading-tight mb-6">
-          {headline}
-        </h1>
-        <p className="text-lg md:text-xl text-blue-100 mb-8 leading-relaxed">
-          {subtext}
-        </p>
-        <Button href={ctaHref} variant="secondary" size="lg">
-          {ctaLabel}
-        </Button>
-      </div>
+    <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">
+      <h1 className="text-4xl md:text-5xl font-bold text-white mb-4 leading-tight drop-shadow">
+        {title}
+      </h1>
+      <p className="text-lg md:text-xl text-white mb-8 drop-shadow">
+        {subtitle}
+      </p>
+      <a
+        href={ctaHref}
+        className="inline-block px-6 py-3 bg-smu-red text-white font-semibold hover:opacity-90 transition-opacity"
+      >
+        {ctaLabel}
+      </a>
     </div>
-
-    {/* Bottom border accent */}
-    <div className="h-1 bg-smu-red" aria-hidden="true" />
   </section>
 );
 
